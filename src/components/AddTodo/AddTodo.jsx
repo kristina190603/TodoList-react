@@ -12,7 +12,7 @@ const AddTodo = (props) => {
       status: false,
       id: Date.now(),
     };
-    console.log(newTask);
+    // console.log(newTask);
     props.handleTask(newTask);
     setTask("");
   };
