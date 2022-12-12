@@ -23,12 +23,20 @@ const App = () => {
     setTodos(newTodos); //меняем старое состояние на новое
     // ставим фигурные фотки, потому что это уже js
   }
+// ! CRUD ФУНКЦИЯ НА УДАЛЕНИЕ
+function deleteTodo(id){
+  let newTodos = todos.filter((item)=>{
+    return item.id == id
+  })
+  console.log(newTodos)
+}
+
   console.log(todos);
   return (
     <div>
       {/* отображаем компоненты AddTodo и передаем туда данные из App */}
       <AddTodo handleTask={handleTask} todos={todos} setTodos={setTodos} />
-      <TodoList changeStatus={changeStatus} todos={todos} />
+      <TodoList changeStatus={changeStatus} todos={todos}  deleteTodo={deleteTodo}/>
     </div>
   );
 };
